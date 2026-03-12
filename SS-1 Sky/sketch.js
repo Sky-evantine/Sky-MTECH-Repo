@@ -14,19 +14,25 @@ let birdX = -50;
 // black hole position VERY IMPORTANT- MAIN FEATURE
 let blackHoleY = 120;
 
-function setup() {createCanvas(600, 400);}
+function setup() {
+  createCanvas(600, 400);
+}
+
 function draw() {
 
   // sun follows mouse Y like in class
   sunHeight = mouseY;
+
   // map sun height to sky color. I think theres a video.-----------Future note yes there is I found it
   redVal = map(sunHeight, height, 0, 0, 255);
   greenVal = map(sunHeight, height, 0, 50, 200);
 
   // sky color
-  if (sunHeight < horizon)
-     {background(redVal, greenVal, 255);}
-   else {background(0, 0, 40);}
+  if (sunHeight < horizon) {
+    background(redVal, greenVal, 255);
+  } else {
+    background(0, 0, 40);
+  }
 
   // NORMAL SUN----Base design I made before adding the black hole mode, I want to keep it as a fallback in case the black hole mode is too buggy or something. I also just like the way the sun looks so I want to keep it as an option. I can always add more features to it later to make it more interesting, but for now I just want a simple glowing sun that changes color based on its height in the sky.
   if (!blackSun) {
@@ -40,7 +46,11 @@ function draw() {
 
   } 
   // BLACK HOLE MODE- so fucking cool
-  else {drawBlackHole();}
+  else {
+
+    drawBlackHole();
+
+  }
 
   // mountains whatever
   fill(110, 50, 18);
@@ -59,7 +69,10 @@ function draw() {
   triangle(200, 400, 450, 250, 300, 400);
 
   // birds appear when sun rises above horizon, I want them to fly across the sky so I need to track their position and reset it when they go off screen. I also want them to only appear when the sun is above the horizon, so I need to check for that condition before drawing them. I can use a simple line drawing for the birds, maybe just a V shape to represent them flying. I also want to add some randomness to their position and size to make it look more natural.
-  if (sunHeight < 300) {drawBirds();}}
+  if (sunHeight < 300) {
+    drawBirds();
+  }
+}
 
 
 // BLACK HOLE- This is my function, not too hard easy concept

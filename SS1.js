@@ -44,4 +44,3 @@ function draw () {
   // Mouth
   arc(200, 250, 40, 20, 0, PI);
 }
-// This code creates a simple night scene with a glowing moon and a face drawn in white line art on the ground. The moon has a soft glow effect, and the face features basic shapes for the eyes, nose, and mouth.
